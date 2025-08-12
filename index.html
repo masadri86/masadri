@@ -1,34 +1,73 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيق مصادري</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f5f7fb; color: #333; text-align: center; margin: 0; }
-        header { background: #4CAF50; padding: 20px; color: white; font-size: 24px; }
-        nav a { margin: 0 15px; text-decoration: none; color: #333; font-weight: bold; }
-        nav a:hover { color: #4CAF50; }
-        footer { background: #333; color: white; padding: 10px; margin-top: 20px; font-size: 14px; }
-        .store-buttons img { height: 50px; margin: 10px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مصادري – كل مواردك التعليمية في مكان واحد</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="assets/style.css" />
+  <meta name="description" content="مصادري منصة رقمية لرفع وبيع وتبادل المصادر التعليمية: مطويات، عروض، أوراق عمل ودورات.">
 </head>
 <body>
-    <header>مرحباً بك في تطبيق مصادري</header>
-    <nav>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.png" alt="شعار مصادري">
+        <div class="name">مصادري</div>
+      </div>
+      <nav class="links">
         <a href="index.html">الرئيسية</a>
         <a href="contact.html">تواصل معنا</a>
         <a href="terms.html">الشروط والأحكام</a>
         <a href="privacy.html">سياسة الخصوصية</a>
-    </nav>
-    <main>
-        <h2>كل مواردك التعليمية في مكان واحد</h2>
-        <p>تطبيق مصادري يجمع بين المعلمين والمصممين والطلاب وأولياء الأمور.</p>
-        <div class="store-buttons">
-            <a href="https://apps.apple.com/app/id6741678339"><img src="appstore.png" alt="Download on App Store"></a>
-            <img src="googleplay_soon.png" alt="قريباً على Google Play">
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="badge">إصدار تجريبي</div>
+        <h1>كل مواردك التعليمية في مكان واحد</h1>
+        <p>
+          يهدف <strong>مصادري</strong> إلى تمكين المعلمين والمصممين من رفع وبيع مصادرهم التعليمية
+          (مطويات، عروض، أوراق عمل، دورات) بصيغ رقمية متعددة، مع تمكين المتعلمين وأولياء الأمور من
+          تصفّحها وشرائها بسهولة وأمان.
+        </p>
+        <div class="cta">
+          <a class="btn" href="https://apps.apple.com/app/id6741678339" target="_blank" rel="noopener">
+             تحميل على App Store
+          </a>
+          <span class="btn secondary" aria-disabled="true" title="قريبًا على Google Play">
+            Google Play — قريبًا
+          </span>
         </div>
-    </main>
-    <footer>جميع الحقوق محفوظة © 2025 تطبيق مصادري</footer>
+        <p class="small">الشراء آمن، والمحتوى يُراجع قبل النشر، مع سياسات تحمي الملكية الفكرية وخصوصية المستخدمين.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid">
+        <div class="card">
+          <h3>فكرة التطبيق</h3>
+          <ul class="list">
+            <li>تمكين المبدعين من تحقيق دخل إضافي عبر بيع مصادرهم.</li>
+            <li>تبادل الخبرات بين التربويين وأولياء الأمور.</li>
+            <li>دعم الطلاب بمواد عالية الجودة وبأسعار مناسبة.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>فيديو: توثيق الحقوق</h3>
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/14xp_Cle1Fo" title="حفظ الحقوق - وثيقة عمل حر" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© جميع الحقوق محفوظة 2025 — تطبيق مصادري</div>
+  </footer>
 </body>
 </html>
