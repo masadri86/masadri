@@ -1,80 +1,182 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>مصادري — كل مصادرِك التعليمية في مكان واحد</title>
-  <link rel="icon" href="assets/logo.png">
-  <link rel="stylesheet" href="assets/styles.css">
-  <meta name="description" content="مصادري: منصّة تجمع المصادر التعليمية و تُمكن المعلّمين من بيع ومشاركة أعمالهم.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مصادري – كل مصادرك التعليمية في مكان واحد</title>
+  <meta name="description" content="مصادري منصة تعليمية رقمية لرفع وبيع ومشاركة المصادر التعليمية مثل المطويات والعروض وأوراق العمل والدورات.">
+  <link rel="icon" href="assets/logo.png" />
+  <meta property="og:title" content="مصادري – كل مصادرك التعليمية في مكان واحد">
+  <meta property="og:description" content="ادعم المعلمين، تبادل الخبرات، واحصل على مصادر تعليمية موثوقة وبأسعار مناسبة.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_SA">
+  <!-- يمكنك استخدام ملف خارجي: <link rel="stylesheet" href="assets/styles.css"> -->
+
+  <style>
+    :root{
+      --blue:#2fa7ff;
+      --green:#48d000;
+      --pink:#ff4fa0;
+      --dark:#2e2e2e;
+      --bg:#f5f7fb;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    html{direction:rtl;scroll-behavior:smooth}
+    body{
+      margin:0; font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial;
+      background:var(--bg); color:var(--dark);
+    }
+    a{color:inherit}
+
+    /* Header */
+    header{
+      background:linear-gradient(90deg,var(--green),var(--blue));
+      color:#fff; box-shadow:0 8px 20px rgba(0,0,0,.06);
+    }
+    .nav{
+      max-width:1040px; margin:auto; padding:14px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+    .brand{display:flex; align-items:center; gap:10px}
+    .brand img{width:42px;height:42px;border-radius:10px;display:block}
+    .brand .name{font-weight:800;font-size:20px;letter-spacing:.2px}
+    .links a{
+      color:#fff; text-decoration:none; margin-inline:6px; padding:6px 10px; border-radius:8px;
+    }
+    .links a:hover{background:rgba(255,255,255,.16)}
+
+    /* Hero */
+    .hero{
+      max-width:1040px; margin:26px auto; background:#fff; border-radius:16px;
+      padding:26px 22px; box-shadow:0 10px 24px rgba(0,0,0,.06);
+    }
+    .hero h1{color:var(--green); font-size:28px; margin:0 0 8px}
+    .hero p{line-height:1.9; margin:10px 0}
+    .muted{color:#666}
+
+    .store-buttons{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:12px}
+    .btn{
+      border:0; cursor:pointer; padding:10px 14px; border-radius:10px;
+      font-weight:800; text-decoration:none; display:inline-block;
+    }
+    .btn.appstore{background:var(--blue); color:#fff}
+    .btn.appstore:hover{filter:brightness(.95)}
+    .btn.play{background:#d9d9d9; color:#666; cursor:not-allowed}
+
+    /* Features */
+    .features{
+      max-width:1040px; margin:10px auto 26px; display:grid; gap:12px;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    }
+    .card{
+      background:#fff; border-radius:14px; padding:16px 14px; box-shadow:0 6px 18px rgba(0,0,0,.05);
+    }
+    .chip{display:inline-block; padding:4px 8px; border-radius:999px; font-size:12px; color:#fff; margin-bottom:8px}
+    .chip.green{background:var(--green)} .chip.blue{background:var(--blue)} .chip.pink{background:var(--pink)}
+    .card h3{margin:6px 0 8px; font-size:18px}
+    .card p{margin:0; color:#555; line-height:1.8}
+
+    /* Video */
+    .video{
+      max-width:1040px; margin:0 auto 26px; background:#fff; border-radius:16px; padding:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,.06);
+    }
+    .video h2{margin:0 0 10px; color:var(--pink); font-size:22px}
+    .video .frame{position:relative; padding-top:56.25%; border-radius:12px; overflow:hidden}
+    .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+
+    /* Footer */
+    footer{ text-align:center; padding:16px; color:#888; font-size:14px }
+    footer strong{ color:var(--pink) }
+
+    /* Responsive tweaks */
+    @media (max-width:560px){ .links{display:none} }
+  </style>
 </head>
 <body>
-  
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <img src="assets/logo.png" alt="شعار مصادري" />
-      <span>مصادري</span>
+
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <!-- لو كان اسم الملف PNG.png سيتم التبديل تلقائيًا -->
+        <img src="assets/logo.png" alt="شعار مصادري" onerror="this.onerror=null;this.src='assets/PNG.png'">
+        <div class="name">مصادري</div>
+      </div>
+      <nav class="links">
+        <a href="index.html">الرئيسية</a>
+        <a href="contact.html">تواصل معنا</a>
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="terms.html">الشروط والأحكام</a>
+      </nav>
     </div>
-    <nav class="links" aria-label="روابط الموقع">
-      <a href="index.html" style="text-decoration:underline;">الرئيسية</a>
-      <a href="contact.html" >تواصل معنا</a>
-      <a href="privacy.html" >سياسة الخصوصية</a>
-      <a href="terms.html" >الشروط والأحكام</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>كل مصادرِك التعليمية في مكان واحد</h1>
-        <p class="lead">
-          يهدف <strong>تطبيق مصادري</strong> إلى تمكين المعلّمين والمصمّمين وكل باحث عن دخل إضافي
-          من رفع وبيع ومشاركة ملفاتهم التعليمية (مطويات، عروض تقديمية، أوراق عمل، دورات) بصيغ رقمية متعددة.
-          ويمكن للمعلمين والطلاب وأولياء الأمور تصفّح ما يناسبهم وشراؤه بسهولة.
-        </p>
-        <div class="badges">
-          <a class="btn-store" href="https://apps.apple.com/app/id6741678339" target="_blank" rel="noopener">تحميل من App Store</a>
-          <span class="btn-soon" title="قريبًا على متجر Google Play">Google Play (قريبًا)</span>
-        </div>
-      </div>
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <p class="muted">مرحبًا بك في تطبيق <strong>مصادري</strong></p>
+    <h1>كل مصادرك التعليمية في مكان واحد</h1>
 
-    <section class="section">
-      <div class="container">
-        <h2>لماذا مصادري؟</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>دعم المعلّمين</h3>
-            <p>تمكين المعلّمين من بيع مصادرهم التعليمية وتحقيق دخل إضافي بمرونة.</p>
-          </div>
-          <div class="card">
-            <h3>تبادل الخبرات</h3>
-            <p>منصة تُسهل مشاركة الموارد بين التربويين وأولياء الأمور مع وصول سريع للطلاب.</p>
-          </div>
-          <div class="card">
-            <h3>بيئة موثوقة</h3>
-            <p>مراجعة المحتوى، احترام حقوق الملكية، وحماية بيانات المستخدمين.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <p>
+      يهدف تطبيق <strong>مصادري</strong> إلى توفير منصة تعليمية رقمية تُمكّن المعلمين والمصممين وكل من يبحث عن مصدر دخل إضافي
+      من رفع ومشاركة ملفاتهم التعليمية (مطويات، عروض تقديمية، أوراق عمل، دورات) بصيغ رقمية متعددة.
+      في المقابل يمكن للمعلمين والطلاب وأولياء الأمور تصفح هذه المصادر وشراء ما يناسبهم وتحميله بسهولة.
+    </p>
+    <p>
+      يدعم التطبيق المعلمين ماديًا عبر تمكينهم من بيع مصادرهم، ويُسهم في تبادل الخبرات والمصادر بين التربويين وأولياء الأمور،
+      مع توفير مصادر موثوقة وبأسعار مناسبة للجميع. نراجع المحتوى قبل النشر، ونحمي حقوق الملكية الفكرية، ونطبّق أفضل ممارسات حماية البيانات.
+    </p>
 
-    <section class="section">
-      <div class="container">
-        <h2>فيديو تعريفي</h2>
-        <div class="video-box">
-          <iframe src="https://www.youtube.com/embed/14xp_Cle1Fo" title="كيف إصدار وثيقة عمل حر" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-<footer>
-  جميع الحقوق محفوظة © 2025 تطبيق <strong>مصادري</strong> —
-  <a href="privacy.html">الخصوصية</a> · <a href="terms.html">الشروط</a>
-</footer>
+    <!-- Store buttons -->
+    <div class="store-buttons">
+      <a class="btn appstore" href="https://apps.apple.com/app/id6741678339" target="_blank" rel="noopener"> Download on App Store</a>
+      <button class="btn play" title="قريبًا" disabled>Google Play قريبًا</button>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="card">
+      <span class="chip green">لماذا مصادري؟</span>
+      <h3>دعم المعلمين</h3>
+      <p>تحويل المصادر التعليمية إلى دخل إضافي مستدام عبر البيع القانوني والآمن.</p>
+    </div>
+    <div class="card">
+      <span class="chip blue">سهولة الوصول</span>
+      <h3>مصادر جاهزة</h3>
+      <p>تصفّح، اختر، ادفع، ثم حمّل ملفاتك فورًا بصيغ متعددة تناسب احتياجك.</p>
+    </div>
+    <div class="card">
+      <span class="chip pink">تبادل الخبرات</span>
+      <h3>مجتمع تربوي</h3>
+      <p>مشاركة المصادر بين التربويين وأولياء الأمور لرفع جودة التعلّم.</p>
+    </div>
+    <div class="card">
+      <span class="chip blue">أمان وخصوصية</span>
+      <h3>ثقة وموثوقية</h3>
+      <p>مراجعة المحتوى قبل النشر، حماية الملكية الفكرية، وتشفير بيانات المستخدمين.</p>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="video" id="video">
+    <h2>فيديو تعريفي: طريقة إصدار وثيقة عمل حر (لحفظ الحقوق)</h2>
+    <div class="frame">
+      <iframe
+        src="https://www.youtube.com/embed/14xp_Cle1Fo"
+        title="كيف إصدار وثيقة عمل حر"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    جميع الحقوق محفوظة © <strong>مصادري</strong> 2025
+  </footer>
 
 </body>
 </html>
