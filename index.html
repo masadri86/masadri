@@ -1,58 +1,54 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مصادري</title>
-
-    <!-- Snap Pixel Code -->
-    <script type='text/javascript'>
-    (function(e,t,n){
-        if(e.snaptr)return;
-        var a=e.snaptr=function(){
-            a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)
-        };
-        a.queue=[];
-        var s='script';
-        r=t.createElement(s);r.async=!0;
-        r.src=n;
-        var u=t.getElementsByTagName(s)[0];
-        u.parentNode.insertBefore(r,u);
-    })(window,document,'https://sc-static.net/scevent.min.js');
-
-    snaptr('init', 'ceffbe05-b0bf-4b3b-9fa6-45bca6f9b7ac', {});
-    snaptr('track', 'PAGE_VIEW');
-    </script>
-    <!-- End Snap Pixel Code -->
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            direction: rtl;
-            padding: 50px;
-        }
-        a.app-store {
-            display: inline-block;
-            padding: 10px 20px;
-            background: black;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 16px;
-        }
-    </style>
+    <link rel="icon" href="assets/logo.png">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-    <h1>تطبيق مصادري</h1>
-    <p>مواردك بيدك</p>
+<header class="container nav">
+    <div class="brand">
+        <img src="assets/logo.png" alt="مصادري">
+        <div class="name">مصادري</div>
+    </div>
+    <nav class="links">
+        <a href="index.html">الرئيسية</a>
+        <a href="contact.html">تواصل معنا</a>
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="terms.html">الشروط والأحكام</a>
+    </nav>
+</header>
 
-    <a href="https://apps.apple.com/sa/app/masadri/id6741678339" 
-       class="app-store"
-       onclick="snaptr('track', 'OUTBOUND_CLICK')">
-        Download on App Store
-    </a>
+<main class="container">
+    <h1>كل مصادرك التعليمية في مكان واحد</h1>
+    <p>
+        يهدف تطبيق “مصادري” إلى تمكين المعلمين، والمصممين، وكل من يبحث عن مصدر دخل إضافي، من رفع ومشاركة ملفاتهم التعليمية 
+        مثل: المطويات، العروض التقديمية، أوراق العمل، والدورات، بصيغ رقمية متعددة. في المقابل، يمكن للمعلمين، والطلاب، وأولياء الأمور تصفح هذه المصادر، اختيار ما يناسبهم، شراؤه، وتحميله بسهولة.
+    </p>
+
+    <!-- زر تحميل التطبيق -->
+    <p style="margin-top:20px;">
+        <a href="https://apps.apple.com/sa/app/masadri/id6741678339" 
+           onclick="snaptr('track', 'OUTBOUND_CLICK')" 
+           style="display:inline-block; background:#007aff; color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-size:18px;">
+            Download on App Store
+        </a>
+    </p>
+
+    <!-- رابط الفيديو -->
+    <p>
+        <a href="https://youtu.be/14xp_Cle1Fo?feature=shared" target="_blank">
+            فيديو: كيف إصدار وثيقة عمل حر
+        </a>
+    </p>
+</main>
+
+<footer class="container">
+    <p>© 2025 مصادري - جميع الحقوق محفوظة</p>
+</footer>
 
 </body>
 </html>
