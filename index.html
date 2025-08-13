@@ -49,8 +49,8 @@
           ويمكن للمعلمين والطلاب وأولياء الأمور تصفّح ما يناسبهم وشراؤه بسهولة.
         </p>
         <div class="badges">
-          <a class="btn-store" href="https://apps.apple.com/app/id6741678339" target="_blank" rel="noopener">تحميل من App Store</a>
-          <span class="btn-soon" title="قريبًا على متجر Google Play">Google Play (قريبًا)</span>
+          <a id="btn-appstore" class="btn-store" href="https://apps.apple.com/app/id6741678339" target="_blank" rel="noopener">تحميل من App Store</a>
+          <span class="btn-soon" title="قريبًا على متجر Google Play">Google Play (قريبًا)</span>
         </div>
       </div>
     </section>
@@ -89,6 +89,18 @@
   جميع الحقوق محفوظة © 2025 تطبيق <strong>مصادري</strong> —
   <a href="privacy.html">الخصوصية</a> · <a href="terms.html">الشروط</a>
 </footer>
+
+<!-- تتبع ضغط زر App Store -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var btn = document.getElementById('btn-appstore');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      snaptr('track', 'SIGN_UP', { destination: 'app_store' });
+    });
+  }
+});
+</script>
 
 </body>
 </html>
